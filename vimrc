@@ -7,6 +7,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'ctrlpvim/ctrlp.vim'
     Plug 'tpope/vim-fugitive'
     Plug 'valloric/youcompleteme'
+    Plug 'chiel92/vim-autoformat'
+
 " PYTHON
     Plug 'klen/python-mode'
 " JAVASCRIPTS
@@ -17,7 +19,6 @@ call plug#begin('~/.vim/plugged')
 "    Plug 'gregsexton/matchtag'
 "    Plug 'lesguillemets/threejsify.vim.dev'
 "    Plug 'marijnh/tern_for_vim'
-"    Plug 'chiel92/vim-autoformat'
 "    Plug 'moll/vim-node'
 "
 call plug#end()
@@ -50,4 +51,4 @@ set smartindent
 set nowrap
 
 map <F3> :Autoformat <CR>
-
+hi Normal guibg=NONE ctermbg=NONE

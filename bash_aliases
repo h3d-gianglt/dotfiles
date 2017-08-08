@@ -1,3 +1,5 @@
+alias py='python'
+alias py3='python3'
 alias sai='sudo apt install'
 alias sau='sudo apt update'
 alias saug='sudo apt upgrade'
