@@ -6,7 +6,9 @@ call plug#begin('~/.vim/plugged')
     Plug 'tomasr/molokai'
     Plug 'ctrlpvim/ctrlp.vim'
     Plug 'tpope/vim-fugitive'
-
+    Plug 'valloric/youcompleteme'
+" PYTHON
+    Plug 'klen/python-mode'
 " JAVASCRIPTS
 "    Plug 'pangloss/vim-javascript'
 "    Plug 'thaerkh/vim-workspace'
