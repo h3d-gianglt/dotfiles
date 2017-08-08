@@ -19,10 +19,12 @@ set $online 9:Online
 # Colors
 set $black #000000
 set $white #ffffff
+set $ablack #aa000000
+set $awhite #aa000000
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Noto Mono 10
+font pango:Noto Mono 12
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -159,14 +161,16 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+  i3bar_command i3bar -t
   status_command i3status
+  height 25 
   colors {
     separator $white
-    background $black 
+    background $ablack
     statusline $white
-    focused_workspace $black $white $black 
+    focused_workspace $white $white $black
     active_workspace #141414 #141414 #00b0ef
-    inactive_workspace #141414 #141414 #7d7d7d
+    inactive_workspace $white $awhite $white
     urgent_workspace #ff7066 #141414 #ff7066
   }
 }
@@ -178,19 +182,22 @@ exec --no-startup-id pasystray
 exec --no-startup-id fcitx-autostart 
 exec --no-startup-id lemonbar 
 exec compton -CGb
-exec feh --bg-scale /home/gl/Dropbox/wallpapers/floral.jpg
-
+exec feh --bg-scale /home/gl/Dropbox/wallpapers/v1.jpg
 
 bindsym Mod1+F1 exec --no-startup-id  rofi -show run
 bindsym Mod1+F2 exec --no-startup-id  rofi -show drun
-bindsym Mod1+v exec gvim
+bindsym Mod1+v exec i3-sensible-terminal -e vim
 bindsym Mod1+w exec chromium-browser
 
 for_window [class="Gnome-mplayer"] floating enable
-for_window [class="X-terminal-emulator"] border pixel 1
-for_window [class="Chromium"] border pixel 1
+for_window [class="X-terminal-emulator"] border pixel 3
+for_window [class="Chromium"] border pixel 3
+for_window [class="Thunar"] floating enable
+for_window [class="Blender"] border pixel 0
 
 client.focused $black $white $black $white
-client.focused_inactive #141414 #141414 $black $white
+client.focused_inactive #141414 #141414 $141414 $white
 client.unfocused #141414 #141414 #7d7d7d #141414
 client.urgent #ff7066 #ff7066 #141414 $white
+
+gaps inner 10
