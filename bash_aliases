@@ -8,3 +8,5 @@ alias pingg='ping 8.8.8.8'
 alias saa='sudo apt autoremove'
 alias acs='apt-cache search'
 alias acsh='apt-cache show'
+
+

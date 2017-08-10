@@ -2,7 +2,7 @@
 
 # Install packages
 
-sudo apt install vim vim-gtk compton rofi conky
+sudo apt install vim vim-gtk compton rofi conky axrandr
 
 # Install configfiles
 
