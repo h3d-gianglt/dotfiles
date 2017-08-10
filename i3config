@@ -185,6 +185,8 @@ exec --no-startup-id nm-applet
 exec --no-startup-id fcitx-autostart 
 exec --no-startup-id compton
 exec --no-startup-id xsetroot -solid "#333333"
+exec --no-startup-id ~/projects/dotfiles/feh_cw.sh
+exec --no-startup-id conky
 
 bindsym Mod1+F1 exec --no-startup-id  rofi -show run
 bindsym Mod1+F2 exec --no-startup-id  rofi -show drun
@@ -193,6 +195,7 @@ bindsym Mod1+v exec i3-sensible-terminal -t floating -e vim
 bindsym $mod+Shift+Return exec i3-sensible-terminal -t floating
 bindsym Mod1+Control+t exec i3-sensible-terminal -t floating
 bindsym Mod1+e exec thunar
+bindsym Mod1+t exec i3-sensible-terminal -t floating
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
 bindsym XF86AudioMute exec amixer -q set Master toggle
@@ -205,12 +208,14 @@ for_window [class="Chromium" window_role="browser"] border pixel 0, floating dis
 for_window [class="Blender"] border pixel 0, floating disable
 for_window [class="Code"] border pixel 0
 for_window [class="Firefox"] border pixel 0, floating disable
+#for_window [title="floating"] floating enable
 for_window [title="floating"] floating enable
+for_window [class="Conky"] border pixel 0
 
 client.focused $black $white $black $black
 client.focused_inactive #141414 #141414 $141414 $white
-#client.unfocused #141414 #141414 #7d7d7d #141414
-client.unfocused $gray $gray $gray $gray
+
+client.unfocused $gray $gray $white $gray
 
 client.urgent #ff7066 #ff7066 #141414 $white
 
