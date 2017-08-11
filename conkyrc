@@ -18,8 +18,10 @@ conky.config = {
     own_window_type = 'override',
     stippled_borders = 0,
     update_interval = 1.0,
-    own_window_argb_visual = true,
-    own_window_transparent = true
+    own_window_argb_visual = false,
+    own_window_transparent = false,
+    own_window_colour = '#333333'
+
 }
 
 conky.text = [[
