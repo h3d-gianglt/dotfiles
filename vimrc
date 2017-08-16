@@ -2,13 +2,15 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'scrooloose/nerdtree'
-    Plug 'morhetz/gruvbox'
-    Plug 'tomasr/molokai'
     Plug 'ctrlpvim/ctrlp.vim'
     Plug 'tpope/vim-fugitive'
     Plug 'valloric/youcompleteme'
     Plug 'chiel92/vim-autoformat'
-    Plug 'nlknguyen/papercolor-theme'
+
+"COLORS
+    Plug 'morhetz/gruvbox'
+    Plug 'tomasr/molokai'
+    Plug 'hzchirs/vim-material'
 
 " PYTHON
     Plug 'klen/python-mode'
@@ -50,6 +52,9 @@ set number
 set noswapfile
 set smartindent
 set nowrap
+set clipboard=unnamedplus
 
 map <F3> :Autoformat <CR>
-hi Normal guibg=NONE ctermbg=NONE
+" hi Normal guibg=NONE ctermbg=NONE
+"
+colorscheme vim-material

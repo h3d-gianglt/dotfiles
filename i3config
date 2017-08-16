@@ -184,13 +184,13 @@ exec --no-startup-id nm-applet
 exec --no-startup-id fcitx-autostart 
 exec --no-startup-id xsetroot -solid "#333333"
 exec --no-startup-id conky
-exec --no-startup-id feh --randomize --bg-fill ~/Dropbox/wallpapers/*'
+#exec --no-startup-id feh --randomize --bg-fill ~/Dropbox/wallpapers/*
 exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 
 bindsym Mod1+F1 exec --no-startup-id  rofi -show run
 bindsym Mod1+F2 exec --no-startup-id  rofi -show drun
 bindsym Mod1+Tab focus right
-bindsym Mod1+v exec i3-sensible-terminal -t floating -e vim
+bindsym Mod1+v exec gvim
 bindsym $mod+Shift+Return exec i3-sensible-terminal -t floating
 bindsym Mod1+Control+t exec i3-sensible-terminal -t floating
 bindsym Mod1+e exec thunar
@@ -212,6 +212,7 @@ for_window [class="Code"] border pixel 0
 for_window [class="Firefox"] border pixel 0, floating disable
 for_window [title="floating"] floating enable
 for_window [class="Conky"] border pixel 0
+for_window [class="Gvim"] border pixel 0
 
 client.focused $black $white $black $black
 client.focused_inactive #141414 #141414 $141414 $white
