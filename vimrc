@@ -6,12 +6,12 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-fugitive'
     Plug 'valloric/youcompleteme'
     Plug 'chiel92/vim-autoformat'
-
+    Plug 'vim-scripts/EditPlus'
 "COLORS
     Plug 'morhetz/gruvbox'
     Plug 'tomasr/molokai'
     Plug 'hzchirs/vim-material'
-
+    Plug 'joshdick/onedark.vim'
 " PYTHON
     Plug 'klen/python-mode'
 " JAVASCRIPTS
@@ -23,7 +23,8 @@ call plug#begin('~/.vim/plugged')
 "    Plug 'lesguillemets/threejsify.vim.dev'
 "    Plug 'marijnh/tern_for_vim'
 "    Plug 'moll/vim-node'
-"
+" C/C++
+    Plug 'vhdirk/vim-cmake'
 call plug#end()
 
 imap jj <Esc> :w<cr>
@@ -41,7 +42,6 @@ nnoremap tq :tabclose<CR>
 
 syntax on
 
-colo molokai
 set splitright
 
 " rendering white space
@@ -56,5 +56,10 @@ set clipboard=unnamedplus
 
 map <F3> :Autoformat <CR>
 " hi Normal guibg=NONE ctermbg=NONE
-"
-colorscheme vim-material
+" colorscheme vim-material
+colorscheme gruvbox
+set background=dark
+
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+
