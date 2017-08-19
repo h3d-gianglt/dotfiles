@@ -7,10 +7,10 @@ call plug#begin('~/.vim/plugged')
     Plug 'valloric/youcompleteme'
     Plug 'chiel92/vim-autoformat'
     Plug 'vim-scripts/EditPlus'
+    Plug 'scrooloose/syntastic'
 "COLORS
     Plug 'morhetz/gruvbox'
     Plug 'tomasr/molokai'
-    Plug 'hzchirs/vim-material'
     Plug 'joshdick/onedark.vim'
 " PYTHON
     Plug 'klen/python-mode'
@@ -57,7 +57,7 @@ set clipboard=unnamedplus
 map <F3> :Autoformat <CR>
 " hi Normal guibg=NONE ctermbg=NONE
 " colorscheme vim-material
-colorscheme gruvbox
+colorscheme molokai
 set background=dark
 
 let g:airline_powerline_fonts = 1
