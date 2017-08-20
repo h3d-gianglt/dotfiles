@@ -9,7 +9,7 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod    Mod4
-set $launch Mod1
+set $launch Mod4+Control
 set $code   1:Code
 set $www    2:WWW
 set $dev    3:Dev
@@ -174,13 +174,10 @@ exec --no-startup-id conky
 exec --no-startup-id feh --randomize --bg-fill ~/Dropbox/wallpapers/*
 exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 
-bindsym $launch+F1 exec --no-startup-id  rofi -show run
-bindsym $launch+F2 exec --no-startup-id  rofi -show drun
+bindsym Mod1+F1 exec --no-startup-id  rofi -show run
+bindsym Mod1+F2 exec --no-startup-id  rofi -show drun
 bindsym $launch+Tab focus right
 bindsym $launch+v exec gvim -geom="200x60+0+0"
-bindsym $mod+Shift+Return exec i3-sensible-terminal -t floating
-bindsym $launch+Control+t exec i3-sensible-terminal -t floating
-bindsym $mod+Control+t exec i3-sensible-terminal -t floating
 bindsym $launch+e exec thunar
 bindsym $launch+t exec i3-sensible-terminal -t floating
 bindsym $mod+p exec arandr
