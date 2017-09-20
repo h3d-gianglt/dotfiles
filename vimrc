@@ -14,15 +14,13 @@ call plug#begin('~/.vim/plugged')
     Plug 'joshdick/onedark.vim'
 " PYTHON
     Plug 'klen/python-mode'
-" JAVASCRIPTS
-"    Plug 'pangloss/vim-javascript'
-"    Plug 'thaerkh/vim-workspace'
-"    Plug 'othree/html5.vim'
-"    Plug 'elzr/vim-json'
-"    Plug 'gregsexton/matchtag'
-"    Plug 'lesguillemets/threejsify.vim.dev'
-"    Plug 'marijnh/tern_for_vim'
-"    Plug 'moll/vim-node'
+" HTML5
+    Plug 'pangloss/vim-javascript'
+    Plug 'elzr/vim-json'
+    Plug 'gregsexton/matchtag'
+    Plug 'ap/vim-css-color'
+    Plug 'hail2u/vim-css3-syntax'
+
 " C/C++
     Plug 'vhdirk/vim-cmake'
 call plug#end()
@@ -56,8 +54,10 @@ set clipboard=unnamedplus
 
 map <F3> :Autoformat <CR>
 " hi Normal guibg=NONE ctermbg=NONE
-" colorscheme vim-material
-colorscheme molokai
+
+colo molokai
+" colo gruvbox
+
 set background=dark
 
 let g:airline_powerline_fonts = 1

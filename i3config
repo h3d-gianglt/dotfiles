@@ -44,7 +44,7 @@ font pango:Noto Mono 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec xfce4-terminal
 
 # kill focused window
 bindsym Mod1+F4 kill
@@ -179,7 +179,7 @@ bindsym Mod1+F2 exec --no-startup-id  rofi -show drun
 bindsym $launch+Tab focus right
 bindsym $launch+v exec gvim -geom="200x60+0+0"
 bindsym $launch+e exec thunar
-bindsym $launch+t exec i3-sensible-terminal -t floating
+bindsym $launch+t exec xfce4-terminal
 bindsym $mod+p exec arandr
 bindsym $launch+w exec chromium-browser
 bindsym $launch+l exec gnome-screensaver-command -a
