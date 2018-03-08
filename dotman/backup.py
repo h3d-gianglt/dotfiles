@@ -1,4 +1,4 @@
-import os
+import os, shutil
 
 def create_backup_directory():
     backup_dir = "backup"
@@ -9,5 +9,9 @@ def create_backup_directory():
 
     os.mkdir(backup_dir)
 
-def init():
-    create_backup_directory()
+def copy_dotfiles(dotfiles):
+    for name, path in dotfiles:
+        print('saving ', name, path)
+
+
+
