@@ -1,17 +1,22 @@
 import os, shutil
 
-def create_backup_directory():
-    backup_dir = "backup"
-    count = 0
-    while os.path.isdir(backup_dir):
-        count += 1
-        backup_dir += str(count)
+global _backup_dir 
+_backup_dir = 'backup'
 
-    os.mkdir(backup_dir)
+def create_backup_directory():
+    global _backup_dir 
+    count = 0
+    while os.path.isdir(_backup_dir):
+        count += 1
+        _backup_dir += str(count)
+
+    os.mkdir(_backup_dir)
 
 def copy_dotfiles(dotfiles):
+    global _backup_dir
     for name, path in dotfiles:
-        print('saving ', name, path)
+        abspath = os.path.abspath(path)
+        shutil.copy2(abspath, _backup_dir + "/" + name)
 
 
 

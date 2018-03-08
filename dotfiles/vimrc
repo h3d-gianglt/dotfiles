@@ -1,46 +1,29 @@
 call plug#begin('~/.vim/plugged')
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
-    Plug 'scrooloose/nerdtree'
-    Plug 'ctrlpvim/ctrlp.vim'
-    Plug 'tpope/vim-fugitive'
-    Plug 'valloric/youcompleteme'
-    Plug 'chiel92/vim-autoformat'
-    Plug 'vim-scripts/EditPlus'
-    Plug 'scrooloose/syntastic'
-    Plug 'nathanaelkane/vim-indent-guides'
-    Plug 'rakr/vim-one'
-
-"COLORS
-    Plug 'morhetz/gruvbox'
-    Plug 'tomasr/molokai'
-    Plug 'joshdick/onedark.vim'
-" PYTHON
-    Plug 'klen/python-mode'
-" HTML5
-    Plug 'pangloss/vim-javascript'
-    Plug 'gregsexton/matchtag'
-    Plug 'ap/vim-css-color'
-    Plug 'hail2u/vim-css3-syntax'
-    Plug 'briancollins/vim-jst'
-    Plug 'alvan/vim-closetag'
-    Plug 'mattn/emmet-vim'
-" C/C++
-    Plug 'vhdirk/vim-cmake'
+Plug 'vim-airline/vim-airline'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'nanotech/jellybeans.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'chiel92/vim-autoformat'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-scripts/Align'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-scripts/grep.vim'
+Plug 'noahfrederick/vim-hemisu'
+Plug 'mattesgroeger/vim-bookmarks'
+Plug 'tacahiroy/ctrlp-funky'
+Plug 'xuyuanp/nerdtree-git-plugin'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
-imap jj <Esc> :w<cr>
-
-set expandtab
-set tabstop=2
-set shiftwidth=2
-set guioptions=
-" set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 14
-" set guifont=Noto\ Mono\ for\ Powerline\ 10
-" set guifont=Fira\ Mono\ for\ Powerline\ 12
-" set guifont=IBM\ 3270\ Medium\ 14
-set guifont=IBM\ 3270\ Narrow\ Medium\ 14
-
+" colo jellybeans
+" colo delek
+colo hemisu
+set tabstop=2 shiftwidth=2 sts=2
+set nowrap
+set expandtab number noswapfile
+set guioptions= guifont=Monaco\ 10
+set clipboard=unnamedplus
 
 nnoremap tl :tabnext<CR>
 nnoremap th :tabprevious<CR>
@@ -48,33 +31,52 @@ nnoremap te :tabnew<CR>
 nnoremap tn :tabnew<CR>
 nnoremap tq :tabclose<CR>
 
-syntax on
+map <C-k> :CtrlPFunky<CR>
 
-set splitright
+noremap <C-S-i> :Autoformat<CR>
+map <C-S-b> :make build<CR>
+map <C-S-m> :make
 
-" rendering white space
-set list
-set listchars=tab:⤑\ ,trail:·,nbsp:⎵
-set laststatus=2
-set number
-set noswapfile
-set autoindent
-set nowrap
-set clipboard=unnamedplus
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git|__pycache__'
+let NERDTreeIgnore = ['\.pyc$', '__pycache__']
 
-map <F3> :Autoformat <CR>
-" hi Normal guibg=NONE ctermbg=NONE
+let g:bookmark_save_per_working_dir = 1
+let g:bookmark_auto_save = 1
 
-" colo molokai
-colo one
-" colo gruvbox
+function! BookmarkMapKeys()
+  nmap mm :BookmarkToggle<CR>
+  nmap mi :BookmarkAnnotate<CR>
+  nmap mn :BookmarkNext<CR>
+  nmap mp :BookmarkPrev<CR>
+  nmap ma :BookmarkShowAll<CR>
+  nmap mc :BookmarkClear<CR>
+  nmap mx :BookmarkClearAll<CR>
+  nmap mkk :BookmarkMoveUp
+  nmap mjj :BookmarkMoveDown
+endfunction
+function! BookmarkUnmapKeys()
+  unmap mm
+  unmap mi
+  unmap mn
+  unmap mp
+  unmap ma
+  unmap mc
+  unmap mx
+  unmap mkk
+  unmap mjj
+endfunction
+autocmd BufEnter * :call BookmarkMapKeys()
+autocmd BufEnter NERD_tree_* :call BookmarkUnmapKeys()
 
-set background=dark
-
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-
-" ignore ctrlp
-let g:vtrlp_custom_ignore = 'node_modules\'
-let g:closetag_filenames = '*.ejs, *.html'
-map <F9> :<UP><CR>
+let g:NERDTreeIndicatorMapCustom = {
+      \ "Modified"  : "*",
+      \ "Staged"    : "+",
+      \ "Untracked" : "u",
+      \ "Renamed"   : ">",
+      \ "Unmerged"  : "!",
+      \ "Deleted"   : "-",
+      \ "Dirty"     : ".",
+      \ "Clean"     : " ",
+      \ 'Ignored'   : 'x',
+      \ "Unknown"   : "?"
+      \ }

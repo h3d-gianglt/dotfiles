@@ -1,5 +1,6 @@
 from .backup import *
 
+global _dotfiles
 _dotfiles = []
 
 def set_dotfiles(dotfiles):
