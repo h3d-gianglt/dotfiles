@@ -7,22 +7,24 @@ Plug 'chiel92/vim-autoformat'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-scripts/Align'
-Plug 'tpope/vim-fugitive'
 Plug 'vim-scripts/grep.vim'
 Plug 'noahfrederick/vim-hemisu'
 Plug 'mattesgroeger/vim-bookmarks'
 Plug 'tacahiroy/ctrlp-funky'
 Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
+Plug 'pangloss/vim-javascript'
+Plug 'mattn/emmet-vim'
 call plug#end()
 
 " colo jellybeans
 " colo delek
 colo hemisu
+set background=dark
 set tabstop=2 shiftwidth=2 sts=2
 set nowrap
 set expandtab number noswapfile
-set guioptions= guifont=Monaco\ 10
+set guioptions= guifont=Inconsolata\ 9
 set clipboard=unnamedplus
 
 nnoremap tl :tabnext<CR>
@@ -31,17 +33,23 @@ nnoremap te :tabnew<CR>
 nnoremap tn :tabnew<CR>
 nnoremap tq :tabclose<CR>
 
-map <C-k> :CtrlPFunky<CR>
+nnoremap GA :Git add .
+nnoremap GC :Git commit -m "
 
-noremap <C-S-i> :Autoformat<CR>
-map <C-S-b> :make build<CR>
-map <C-S-m> :make
+
+map <C-k> :CtrlPFunky<CR>
+" map <C-S-i> :Autoformat<CR>
+" map <C-S-b> :make build<CR>
+" map <C-S-m> :make
+map <S-a> :Align 
+
 
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git|__pycache__'
 let NERDTreeIgnore = ['\.pyc$', '__pycache__']
-
+let g:NERDTreeWinSize=18
 let g:bookmark_save_per_working_dir = 1
 let g:bookmark_auto_save = 1
+let g:javascript_plugin_jsdoc = 1
 
 function! BookmarkMapKeys()
   nmap mm :BookmarkToggle<CR>
@@ -67,16 +75,3 @@ function! BookmarkUnmapKeys()
 endfunction
 autocmd BufEnter * :call BookmarkMapKeys()
 autocmd BufEnter NERD_tree_* :call BookmarkUnmapKeys()
-
-let g:NERDTreeIndicatorMapCustom = {
-      \ "Modified"  : "*",
-      \ "Staged"    : "+",
-      \ "Untracked" : "u",
-      \ "Renamed"   : ">",
-      \ "Unmerged"  : "!",
-      \ "Deleted"   : "-",
-      \ "Dirty"     : ".",
-      \ "Clean"     : " ",
-      \ 'Ignored'   : 'x',
-      \ "Unknown"   : "?"
-      \ }
