@@ -1,0 +1,41 @@
+call plug#begin('~/.vim/plugged')
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-scripts/Align'
+Plug 'vim-scripts/grep.vim'
+Plug 'noahfrederick/vim-hemisu'
+" Plug 'mattesgroeger/vim-bookmarks'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'pangloss/vim-javascript'
+call plug#end()
+
+
+colo hemisu
+set background=light
+set tabstop=2 shiftwidth=2 sts=2
+set nowrap
+set expandtab number noswapfile
+set guioptions= guifont=Inconsolata\ 10
+set clipboard=unnamedplus
+set completeopt-=preview
+
+nnoremap tl :tabnext<CR>
+nnoremap th :tabprevious<CR>
+nnoremap te :tabnew<CR>
+nnoremap tn :tabnew<CR>
+nnoremap tq :tabclose<CR>
+
+nnoremap GA :Git add .
+nnoremap GC :Git commit -m "
+nnoremap GP :Git push<CR>
+map <C-k> :CtrlPFunky<CR>
+map <S-a> :Align 
+map <C-P> :e **/*
+
+let NERDTreeIgnore                  = ['\.pyc$', '__pycache__']
+let g:NERDTreeWinSize               = 18
+let g:bookmark_save_per_working_dir = 1
+let g:bookmark_auto_save            = 1
+let g:javascript_plugin_jsdoc       = 1
+let g:indent_guides_start_level     = 2
+let g:indent_guides_guide_size      = 1
