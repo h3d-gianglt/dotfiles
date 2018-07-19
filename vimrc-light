@@ -4,16 +4,16 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/Align'
 Plug 'vim-scripts/grep.vim'
 Plug 'noahfrederick/vim-hemisu'
-" Plug 'mattesgroeger/vim-bookmarks'
+Plug 'mattesgroeger/vim-bookmarks'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'pangloss/vim-javascript'
+Plug 'scrooloose/nerdtree'
+Plug 'nanotech/jellybeans.vim'
 call plug#end()
 
 
-colo hemisu
-set background=light
-set tabstop=2 shiftwidth=2 sts=2
-set nowrap
+colo jellybeans
+set tabstop=2 shiftwidth=2 sts=2 nowrap
 set expandtab number noswapfile
 set guioptions= guifont=Inconsolata\ 10
 set clipboard=unnamedplus
@@ -39,5 +39,3 @@ let g:netrw_winsize=10
 let g:bookmark_save_per_working_dir = 1
 let g:bookmark_auto_save            = 1
 let g:javascript_plugin_jsdoc       = 1
-let g:indent_guides_start_level     = 2
-let g:indent_guides_guide_size      = 1
