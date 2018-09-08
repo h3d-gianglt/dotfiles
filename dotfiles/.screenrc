@@ -1,2 +1,2 @@
 startup_message off
-caption always "%{= kw}%-w%{= gW} %n %t %{-}%+w %-="
+caption always "%{= kw} %-w%{= gW} %n %t %{-}%+w %-="
