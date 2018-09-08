@@ -3,16 +3,12 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/Align'
 Plug 'vim-scripts/grep.vim'
-Plug 'noahfrederick/vim-hemisu'
-Plug 'mattesgroeger/vim-bookmarks'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'pangloss/vim-javascript'
 Plug 'scrooloose/nerdtree'
 Plug 'nanotech/jellybeans.vim'
+Plug 'leafgarland/typescript-vim'
 call plug#end()
 
-
-colo jellybeans
 set tabstop=2 shiftwidth=2 sts=2 nowrap
 set expandtab number noswapfile
 set guioptions= guifont=Inconsolata\ 10
@@ -29,13 +25,7 @@ nnoremap tq :tabclose<CR>
 nnoremap GA :!git add .
 nnoremap GC :!git commit -m "
 nnoremap GP :!git push<CR>
-map <C-k> :CtrlPFunky<CR>
 map <S-a> :Align 
 map <C-P> :e **/*
-map E :Lex<CR>
-
 
 let g:netrw_winsize=10
-let g:bookmark_save_per_working_dir = 1
-let g:bookmark_auto_save            = 1
-let g:javascript_plugin_jsdoc       = 1
