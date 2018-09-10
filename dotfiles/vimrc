@@ -1,31 +1,32 @@
+
 call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'nanotech/jellybeans.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'chiel92/vim-autoformat'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'tpope/vim-fugitive'
-Plug 'vim-scripts/Align'
-Plug 'vim-scripts/grep.vim'
-Plug 'noahfrederick/vim-hemisu'
-Plug 'mattesgroeger/vim-bookmarks'
-Plug 'tacahiroy/ctrlp-funky'
-Plug 'xuyuanp/nerdtree-git-plugin'
-Plug 'airblade/vim-gitgutter'
+" Plug 'vim-scripts/Align' 
+" Plug 'vim-scripts/grep.vim'
+" Plug 'noahfrederick/vim-hemisu'
+Plug 'nathanaelkane/vim-indent-guides'
 Plug 'pangloss/vim-javascript'
+Plug 'scrooloose/nerdtree'
+Plug 'nanotech/jellybeans.vim'
 Plug 'mattn/emmet-vim'
+" Plug 'altercation/vim-colors-solarized'
+Plug 'leafgarland/typescript-vim'
+Plug 'valloric/youcompleteme'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
+
 " colo jellybeans
-" colo delek
-colo hemisu
-set background=dark
-set tabstop=2 shiftwidth=2 sts=2
-set nowrap
+" colo solarized
+"
+set tabstop=2 shiftwidth=2 sts=2 nowrap
 set expandtab number noswapfile
-set guioptions= guifont=Inconsolata\ 9
+set guioptions= guifont=Inconsolata\ 10
 set clipboard=unnamedplus
+set completeopt-=preview
+set wildignore=*.o,*~,*.pyc,.vscode/,**/node_modules/**,.git/
+
 
 nnoremap tl :tabnext<CR>
 nnoremap th :tabprevious<CR>
@@ -33,45 +34,18 @@ nnoremap te :tabnew<CR>
 nnoremap tn :tabnew<CR>
 nnoremap tq :tabclose<CR>
 
-nnoremap GA :Git add .
-nnoremap GC :Git commit -m "
-
-
+nnoremap GA :!git add .
+nnoremap GC :!git commit -m "
+nnoremap GP :!git push<CR>
 map <C-k> :CtrlPFunky<CR>
-" map <C-S-i> :Autoformat<CR>
-" map <C-S-b> :make build<CR>
-" map <C-S-m> :make
 map <S-a> :Align 
+map <C-P> :e **/*
+map E :Lex<CR>
 
 
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git|__pycache__'
-let NERDTreeIgnore = ['\.pyc$', '__pycache__']
-let g:NERDTreeWinSize=18
-let g:bookmark_save_per_working_dir = 1
-let g:bookmark_auto_save = 1
-let g:javascript_plugin_jsdoc = 1
+let g:netrw_winsize=10
+let g:javascript_plugin_jsdoc   = 1
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size  = 1
 
-function! BookmarkMapKeys()
-  nmap mm :BookmarkToggle<CR>
-  nmap mi :BookmarkAnnotate<CR>
-  nmap mn :BookmarkNext<CR>
-  nmap mp :BookmarkPrev<CR>
-  nmap ma :BookmarkShowAll<CR>
-  nmap mc :BookmarkClear<CR>
-  nmap mx :BookmarkClearAll<CR>
-  nmap mkk :BookmarkMoveUp
-  nmap mjj :BookmarkMoveDown
-endfunction
-function! BookmarkUnmapKeys()
-  unmap mm
-  unmap mi
-  unmap mn
-  unmap mp
-  unmap ma
-  unmap mc
-  unmap mx
-  unmap mkk
-  unmap mjj
-endfunction
-autocmd BufEnter * :call BookmarkMapKeys()
-autocmd BufEnter NERD_tree_* :call BookmarkUnmapKeys()
+autocmd FileType typescript setlocal completeopt-=menu
