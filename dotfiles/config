@@ -137,10 +137,6 @@ for_window [class="ScratchPad"] floating enable, resize set 1920 384, move posit
 for_window [class="Gnome-terminal"] floating enable border pixel 3
 for_window [class="Gvim"] border pixel 3
 for_window [class="Code"] border pixel 1
-for_window [class="gnome-pie-118"] floating enable
-for_window [class="gnome-pie"] floating enable
-for_window [class="Gnome-pie"] floating enable
-for_window [title="Gnome-pie"] floating enable
 new_window pixel 1
 
 bindsym $mod+Tab [class="ScratchPad"] scratchpad show
