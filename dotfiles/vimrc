@@ -1,32 +1,21 @@
-
 call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-" Plug 'vim-scripts/Align' 
-" Plug 'vim-scripts/grep.vim'
-" Plug 'noahfrederick/vim-hemisu'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'pangloss/vim-javascript'
+Plug 'vim-scripts/Align' 
+Plug 'noahfrederick/vim-hemisu'
 Plug 'scrooloose/nerdtree'
 Plug 'nanotech/jellybeans.vim'
 Plug 'mattn/emmet-vim'
-" Plug 'altercation/vim-colors-solarized'
-Plug 'leafgarland/typescript-vim'
 Plug 'valloric/youcompleteme'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'nlknguyen/papercolor-theme'
 call plug#end()
 
-
-" colo jellybeans
-" colo solarized
-"
 set tabstop=2 shiftwidth=2 sts=2 nowrap
 set expandtab number noswapfile
 set guioptions= guifont=Inconsolata\ 10
 set clipboard=unnamedplus
 set completeopt-=preview
 set wildignore=*.o,*~,*.pyc,.vscode/,**/node_modules/**,.git/
-
 
 nnoremap tl :tabnext<CR>
 nnoremap th :tabprevious<CR>
@@ -37,15 +26,10 @@ nnoremap tq :tabclose<CR>
 nnoremap GA :!git add .
 nnoremap GC :!git commit -m "
 nnoremap GP :!git push<CR>
-map <C-k> :CtrlPFunky<CR>
+
 map <S-a> :Align 
 map <C-P> :e **/*
-map E :Lex<CR>
-
 
 let g:netrw_winsize=10
 let g:javascript_plugin_jsdoc   = 1
-let g:indent_guides_start_level = 2
-let g:indent_guides_guide_size  = 1
 
-autocmd FileType typescript setlocal completeopt-=menu
